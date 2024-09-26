@@ -1,12 +1,178 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Main Website</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129289240-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129289240-1');
+    </script>
+    <title>Prehľad</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon/app/favicon-32x32.1707644071.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icon/app/favicon-16x16.1707644071.png">
+    <link rel="stylesheet" href="/dist/app.1707605736.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.webmanifest">
+
+        <script src="https://browser.sentry-cdn.com/5.26.0/bundle.min.js" integrity="sha384-VGljl8BTZL6Py4DmlOaYmfkOwp8mD3PrmD2L+fN446PZpsrIHuDhX7mnV/L5KuNR" crossorigin="anonymous"></script>
+        <script>
+            Sentry.init({ 
+                release: 'afaslovnik-app@' + "1.3.1",
+                environment: "testing",
+                dsn: 'https://eeb88910cfee485dbcc3d3761ffa83b8@o429413.ingest.sentry.io/5375938' 
+            });
+        </script>
+        <script src="/dist/vendors-app-statistics.chunk.1707605745.js"></script>
+        <script src="/dist/vendors-app.chunk.1707605812.js"></script>
 </head>
-<body>
-    <h1>Welcome to My Main Website</h1>
-    <p>This is the main page hosted on GitHub Pages.</p>
+
+<body class="dashboard">
+    <section>
+<nav class="navbar navbar-expand navbar-light bg-white">
+    <a class="navbar-brand" href="/">
+        <img src="/img/logo/logo.png" style="max-height: 30px;">
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbar">
+        <ul class="navbar-nav flex-column flex-sm-row justify-content-center"> 
+
+                <li class="nav-item d-flex justify-content-center justify-content-sm-end logged-user">
+                    <button type="button" class="btn btn-pink" data-toggle="modal" data-target="#profileModal">
+                        Matyáš Gazur <img src="/img/icon/user.svg" class="logged-user__icon" aria-hidden="true">
+                    </button>
+                </li>
+        </ul>
+    </div>
+</nav>
+    </section>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 offset-lg-1 mb-5 mb-lg-0">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-12 mb-4">
+                            <img src="/img/slovni-zasoba.png" alt="Slovník">
+                        </div>
+
+                        <div class="col-md-9 col-lg-12 mb-2 annotation">
+                            <h1>Slovník</h1>
+                            <p>Obrázkový slovník vám pomôže zapamätať si najpoužívanejšie slová v slovenskom jazyku.</p>
+                        </div>
+
+                        <div class="col-12 col-lg-12 text-center text-lg-left">
+                            <a class="btn btn-lg btn-vocabulary" href="/slovnik">Otvoriť slovník</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-12 mb-4">
+                            <img src="/img/test.png" alt="Testy">
+                        </div>
+
+                        <div class="col-md-9 col-lg-12 mb-2 annotation">
+                            <h1>Testy</h1>
+                            <p>Tu si môžete vyskúšať rozpoznávanie obrázkov zo slovníka. Na konci každého testu uvidíte vyhodnotenie svojej úspešnosti. Celkové pokroky môžete sledovať v štatistikách v menu.</p>
+                        </div>
+
+                        <div class="col-12 col-lg-12 text-center text-lg-left">
+                            <a class="btn btn-lg btn-tests" href="/testy">Prejsť k testom</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <header class="modal-header">
+                <button type="button" class="back" data-close-view>
+                    <span class="chevron chevron-left" title="Back" aria-hidden="true"></span>
+                </button>
+                <div class="text-center modal-title" style="width: 100%;">
+                    Profil
+                </div>
+                <button type="button" class="close" data-dismiss="modal" style="padding-left: 0px;">&times;</button>
+            </header>
+            <div class="modal-body text-center profile">
+                <section class="view view--visible" data-view-id="main" data-view-title="Profil">
+
+                    
+
+                    <div class="profile-menu">
+                        <h5><a href="/uzivatele">Pacienti</a></h5>
+                        <h5><a href="/statistiky">Štatistika</a></h5>
+                        <h5><a href="/statistiky#nav-difficult" class="difficult">Tažké slová</a></h5>
+                        <h5 data-open-view="feedback-form"><a href="#">Poslať spätná väzbu</a></h5>
+                        <h5><a href="#" data-open-view="revoke-agreement">Odvolať súhlas</a></h5>
+                        <h5><a href="#" data-open-view="logout-confirm">Odhlásiť</a></h5>
+                    </div>
+                </section>
+
+                <!-- Begin: Other dialog views -->
+                <section class="view" data-view-id="feedback-form" data-view-title="Spätná väzba">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeNZAYw8sGh1NYBMs3yVgobcJbbZMZj9UO5HmikwJypEKWV0A/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Načítam...</iframe>
+                </section>
+
+                <section class="view" data-view-id="logout-confirm" data-view-title="Odhlásiť">
+                    <p>Skutočne sa chcete odhlásiť?</p>
+                    <a href="/odhlaseni" class="btn btn-primary mr-3">Áno</a>
+                    <button class="btn btn-primary btn-cancel" data-close-view>Nie</button>
+                </section>
+                
+
+
+                <section class="view text-justify" data-view-id="revoke-agreement" data-view-title="Odvolanie súhlasu so spracovaním osobných údajov">
+                    <p>Spracovanie osobných údajov je nevyhnutné na zabezpečenie plnej funkčnosti aplikácie AfaSlovník.</p>
+                    <p>Ak súhlas odvoláte, musíme <strong>váš účet zrušiť.</strong></p>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-3" data-close-view>Späť</button>
+                        <button class="btn btn-primary" data-open-view="revoke-agreement-finish">Rozumiem</button>
+                    </div>
+                </section>
+
+                <section class="view text-justify" data-view-id="revoke-agreement-finish" data-view-title="Odvolanie súhlasu so spracovaním osobných údajov">
+                    <p>Naozaj si prajete odvolať súhlas so spracovaním osobných údajov, a tým <strong>zrušiť svoj účet v aplikácii AfaSlovník?</strong></p>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-3" data-close-view>NIE</button>
+                        <a href="/sign/revoke-agreement" class="btn btn-secondary">ÁNO</a>
+                    </div>
+                </section>
+                <!-- End: Other dialog screens -->
+
+                <div class="mb-2 lang-switch">
+                    
+                        <a href="/?profileDialog-language=cs&amp;do=profileDialog-switchLanguage" class="d-inline-block mx-1">
+                            <img 
+                                src="/img/icon/flags/cs.svg"
+                                height="32"
+                                alt="cs" class="lang">
+                        </a>
+
+                            <img 
+                                src="/img/icon/flags/sk.svg"
+                                height="32"
+                                alt="sk" class="lang lang--current">
+                </div>
+
+                <small class="app-version"></small>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="/dist/app.bundle.1707605734.js"></script>
 </body>
 </html>
