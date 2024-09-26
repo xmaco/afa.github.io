@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Main Website</title>
+    <title>My Main Website 2</title>
     <script>
         function loadGTag() {
             var script = document.createElement('script');
@@ -19,9 +19,24 @@
 
         document.addEventListener('DOMContentLoaded', loadGTag);
     </script>
+<script>
+        function switchLanguage(lang) {
+            if (lang === 'cs') {
+                document.getElementById('content').innerHTML = 'Vítejte na mé hlavní webové stránce';
+                document.getElementById('description').innerHTML = 'Toto je hlavní stránka hostovaná na GitHub Pages s GA tagem.';
+                document.documentElement.lang = 'cs';
+            } else if (lang === 'en') {
+                document.getElementById('content').innerHTML = 'Welcome to My Main Website';
+                document.getElementById('description').innerHTML = 'This is the main page hosted on GitHub Pages with GA tag.';
+                document.documentElement.lang = 'en';
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Welcome to My Main Website</h1>
-    <p>This is the main page hosted on GitHub Pages with GA tag.</p>
+    <h1 id="content">Welcome to My Main Website</h1>
+    <p id="description">This is the main page hosted on GitHub Pages with GA tag.</p>
+    <button onclick="switchLanguage('en')">English</button>
+    <button onclick="switchLanguage('cs')">Čeština</button>
 </body>
 </html>
