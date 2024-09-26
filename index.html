@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C62HG1HJBV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C62HG1HJBV');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Main Website</title>
     <script>
-        function switchLanguage(lang) {
-            if (lang === 'cs') {
-                document.getElementById('content').innerHTML = 'Vítejte na mé hlavní webové stránce';
-                document.getElementById('description').innerHTML = 'Toto je hlavní stránka hostovaná na GitHub Pages s GA tagem.';
-                document.documentElement.lang = 'cs';
-            } else if (lang ==='en') {
-                document.getElementById('content').innerHTML = 'Welcome to My Main Website';
-                document.getElementById('description').innerHTML = 'This is the main page hosted on GitHub Pages with GA tag.';
-                document.documentElement.lang = 'en';
-            }
+        function loadGTag() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + (window.location.hostname.includes('testing') ? 'G-P0ZYC8M58P' : 'G-C62HG1HJBV');
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', window.location.hostname.includes('testing') ? 'G-P0ZYC8M58P' : 'G-C62HG1HJBV');
         }
+
+        document.addEventListener('DOMContentLoaded', loadGTag);
     </script>
 </head>
 <body>
-    <h1 id="content">Welcome to My Main Website</h1>
-    <p id="description">This is the main page hosted on GitHub Pages with GA tag.</p>
-    <button onclick="switchLanguage('en')">English</button>
-    <button onclick="switchLanguage('cs')">Čeština</button>
+    <h1>Welcome to My Main Website</h1>
+    <p>This is the main page hosted on GitHub Pages with GA tag.</p>
 </body>
 </html>
