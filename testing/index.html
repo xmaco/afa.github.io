@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXJ2LKX4');</script>
+<!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Main Website 2</title>
-    <script>
-        function loadGTag() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + (window.location.hostname.includes('testing') ? 'G-P0ZYC8M58P' : 'G-C62HG1HJBV');
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', window.location.hostname.includes('testing') ? 'G-P0ZYC8M58P' : 'G-C62HG1HJBV');
-        }
-
-        document.addEventListener('DOMContentLoaded', loadGTag);
-    </script>
+   
 <script>
         function switchLanguage(lang) {
             if (lang === 'cs') {
@@ -34,6 +28,12 @@
     </script>
 </head>
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXJ2LKX4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
     <h1 id="content">Welcome to My Main Website</h1>
     <p id="description">This is the main page hosted on GitHub Pages with GA tag.</p>
     <button onclick="switchLanguage('en')">English</button>
